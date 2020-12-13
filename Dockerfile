@@ -2,8 +2,8 @@ FROM openjdk:8-alpine
 WORKDIR /usr/local/tomcat
 RUN apk upgrade && \
     apk add wget maven git
-RUN wget https://downloads.apache.org/tomcat/tomcat-9/v9.0.40/bin/apache-tomcat-9.0.40.tar.gz -O /tmp/tomcat.tar.gz
-RUN tar xf /tmp/tomcat.tar.gz -C /tmp && cp -Rv /tmp/apache-tomcat-9.0.40/* /usr/local/tomcat/
+RUN wget https://downloads.apache.org/tomcat/tomcat-9/v9.0.41/bin/apache-tomcat-9.0.41.tar.gz -O /tmp/tomcat.tar.gz
+RUN tar xf /tmp/tomcat.tar.gz -C /tmp && cp -Rv /tmp/apache-tomcat-9.0.41/* /usr/local/tomcat/
 
 RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git /tmp/boxfuse
 RUN mvn package -f /tmp/boxfuse/pom.xml
